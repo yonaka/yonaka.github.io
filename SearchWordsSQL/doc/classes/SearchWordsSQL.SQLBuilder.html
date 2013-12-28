@@ -139,19 +139,19 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2048018993"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1840933810"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-2048018993" class="accordion-body collapse in">
+            <div id="namespace-1840933810" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2030474884"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2065349754"></a>
                                 <a href="../namespaces/SearchWordsSQL.html" style="margin-left: 30px; padding-left: 0">SearchWordsSQL</a>
             </div>
-            <div id="namespace-2030474884" class="accordion-body collapse ">
+            <div id="namespace-2065349754" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -281,7 +281,7 @@
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(string <span class="argument">$wordSQL</span>, callable <span class="argument">$valueCallback</span>, callable <span class="argument">$IBLCallback</span>)</pre>
+                <pre class="signature" style="margin-right: 54px;">__construct(string <span class="argument">$wordSQL</span>, callable <span class="argument">$valueCallback</span>, callable <span class="argument">$IBLCallback</span>, callback[] <span class="argument">$prefixCallbacks</span>)</pre>
                 <p><em>A constructor.</em></p>
                 <p>A constructor.</p>
 
@@ -301,6 +301,11 @@
                                 <td>callable</td>
                                 <td>$IBLCallback</td>
                                 <td><p>A user function with a parameter to convert a search word.  If omitted, \SearchWordsSQL\IBLCallback() is used. It would be given an original search word as the first parameter and must return a converted value, which if $thisobj were an instance of SQLBuilder, $thisobj->Build()['IBL'] would contain. The return value can be an array.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>callback[]</td>
+                                <td>$prefixCallbacks</td>
+                                <td><p>An array containing prefix functions with keys to specify prefix. A prefix function will be called when a search word contains the prefix at the beginning. The prefix function must return an array containing an SQL string with key 'SQL' and an value with key 'value'.</p></td>
                             </tr>
                                             </table>
                 
@@ -489,7 +494,7 @@ In most cases, search words which are complement is inappropriate for search.</p
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 20th, 2013 at 07:04.
+                    on December 28th, 2013 at 11:37.
                 </section>
             </section>
         </section>
